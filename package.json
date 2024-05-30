@@ -1,0 +1,20 @@
+{
+  "name": "person_backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha tests/**/*test.js --exit",
+    "start": "node index.js",
+    "drop": "npx sequelize db:drop",
+    "seed": "npx sequelize db:seed:all",
+    "setdb": "npm run drop && npx sequelize db:create && npx sequelize db:migrate",
+    "debug": "nodemon index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.7.2"
+  }
+}
