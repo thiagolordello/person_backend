@@ -28,11 +28,11 @@ const itUserModel = (sequelize, DataTypes) => {
     },
   );
 
-  /* itUser.associate = (models) => {
+  itUser.associate = (models) => {
     itUser.hasMany(models.User, { foreignKey: 'it_user_id', as: 'user' });
     itUser.hasMany(models.CredentialModel, { foreignKey: 'created_by', as: 'credential' });
     itUser.hasMany(models.CredentialModel, { foreignKey: 'updated_by', as: 'credential' });
-  };  */
+  };
 
   return itUser;
 };

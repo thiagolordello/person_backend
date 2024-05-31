@@ -1,0 +1,24 @@
+{
+  "development": {
+    "username": "root",
+    "password": "Tdw_bi@analytics",
+    "database": "person_synoro_db",
+    "host": "172.19.0.2",
+    "port": "3306",
+    "dialect": "mysql"
+  },
+  "test": {
+    "username": "root",
+    "password": "trybe12345",
+    "database": "todolist_test_bd",
+    "host": "127.0.2.1",
+    "dialect": "mysql"
+  },
+  "production": {
+    "username": "root",
+    "password": "trybe12345",
+    "database": "todolist_prod_bd",
+    "host": "127.0.2.1",
+    "dialect": "mysql"
+  }
+}

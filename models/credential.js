@@ -21,7 +21,7 @@ const CredentialModel = (sequelize, DataTypes) => {
         onDelete: 'SET NULL',
       },*/
 
-      /*category_id: {
+      category_id: {
         type: DataTypes.INTEGER,
         allowNull: true,
         references: {
@@ -30,9 +30,9 @@ const CredentialModel = (sequelize, DataTypes) => {
         },
         onUpdate: 'CASCADE',
         onDelete: 'SET NULL',
-      },*/
+      },
 
-      /*profile_user_id: {
+      profile_user_id: {
         type: DataTypes.INTEGER,
         allowNull: true,
         references: {
@@ -41,9 +41,9 @@ const CredentialModel = (sequelize, DataTypes) => {
         },
         onUpdate: 'CASCADE',
         onDelete: 'SET NULL',
-      },*/
+      },
 
-      /*status_id: {
+      status_id: {
         type: DataTypes.INTEGER,
         allowNull: false,
         references: {
@@ -52,7 +52,7 @@ const CredentialModel = (sequelize, DataTypes) => {
         },
         onUpdate: 'CASCADE',
         onDelete: 'SET NULL',
-      },*/
+      },
 
       notes: {
         type: DataTypes.STRING,
@@ -65,7 +65,7 @@ const CredentialModel = (sequelize, DataTypes) => {
         defaultValue: sequelize.NOW,
       },
 
-      /*created_by: {
+      created_by: {
         type: DataTypes.INTEGER,
         allowNull: false,
         references: {
@@ -74,21 +74,21 @@ const CredentialModel = (sequelize, DataTypes) => {
         },
         onUpdate: 'CASCADE',
         onDelete: 'SET NULL',
-      },*/
+      },
 
       updated_at: {
         type: sequelize.Date,
         defaeultValue: sequelize.NOW,
       },
 
-      /*updated_by: {
+      updated_by: {
         type: DataTypes.INTEGER,
         allowNull: true,
         references: {
           model: 'it_user',
           key: 'id_it_user',
         },
-      },*/
+      },
 
     },
     {
@@ -98,15 +98,15 @@ const CredentialModel = (sequelize, DataTypes) => {
     },
   );
 
-  /* Credential.associate = (models) => {
+   Credential.associate = (models) => {
     Credential.belongsTo(models.AppCategoryModel, { foreignKey: 'category_id', as: 'app_category' });
     Credential.belongsTo(models.ProfileUserModel, { foreignKey: 'profile_user_id', as: 'profile_user' });
     Credential.belongsTo(models.StatusModel, { foreignKey: 'status_id', as: 'status' });
-    Credential.belongsTo(models.User, { foreignKey: 'id_user', as: 'user' });
-    Credential.belongsTo(models.itUserModel, { foreignKey: 'id_it_user' , as: 'id_it_user' });
-    Credential.belongsTo(models.itUserModel, { foreignKey: 'id_it_user' , as: 'id_it_user' });
+    //Credential.belongsTo(models.User, { foreignKey: 'id_user', as: 'user' });
+    Credential.belongsTo(models.itUserModel, { foreignKey: 'created_by' , as: 'id_it_user' });
+    Credential.belongsTo(models.itUserModel, { foreignKey: 'updated_by' , as: 'id_it_user' });
 
-  }; */
+  };
 
   return Credential;
 };

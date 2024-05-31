@@ -1,3 +1,6 @@
+'use strict';
+
+/** @type {import('sequelize-cli').Migration} */
 module.exports = {
   up: async (queryInterface, Sequelize) => queryInterface.createTable('credential', {
     id_credential: {
@@ -18,7 +21,7 @@ module.exports = {
       onDelete: 'SET NULL',
     }, */
 
-    /* category_id: {
+    category_id: {
       type: Sequelize.INTEGER,
       allowNull: true,
       references: {
@@ -27,9 +30,9 @@ module.exports = {
       },
       onUpdate: 'CASCADE',
       onDelete: 'SET NULL',
-    }, */
+    },
 
-    /* profile_user_id: {
+    profile_user_id: {
       type: Sequelize.INTEGER,
       allowNull: true,
       references: {
@@ -38,7 +41,7 @@ module.exports = {
       },
       onUpdate: 'CASCADE',
       onDelete: 'SET NULL',
-    }, */
+    },
 
     /* status_id: {
       type: Sequelize.INTEGER,

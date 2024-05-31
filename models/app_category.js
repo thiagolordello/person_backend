@@ -23,9 +23,9 @@ const AppCategoryModel = (sequelize, DataTypes) => {
     },
   );
 
-  /* appcategory.associate = (models) => {
+  appcategory.associate = (models) => {
     appcategory.hasMany(models.CredentialModel, { foreignKey: 'category_id', as: 'credential' });
-  }; */
+  };
 
   return appcategory;
 };

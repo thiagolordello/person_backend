@@ -1,3 +1,6 @@
+'use strict';
+
+/** @type {import('sequelize-cli').Migration} */
 module.exports = {
   up: async (queryInterface, Sequelize) => queryInterface.createTable('app_category', {
     id_category: {

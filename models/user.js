@@ -94,15 +94,15 @@ const UserModel = (sequelize, DataTypes) => {
         onDelete: 'SET NULL',
       },
 
-      credential_id: {
+      /*credential_id: {
         type: DataTypes.INTEGER,
         allowNull: true,
         foreignKey: true,
-        /* references: {
+         references: {
           model: 'credential',
           key: 'id_credential',
-        }, */
-      },
+        },
+      },*/
 
     },
     {
@@ -112,14 +112,14 @@ const UserModel = (sequelize, DataTypes) => {
     },
   );
 
-  /* User.associate = (models) => {
+  User.associate = (models) => {
     User.belongsTo(models.roleUser, { foreignKey: 'role_id', as: 'role' });
     User.belongsTo(models.StatusModel,{ foreignKey: 'status_id',as: 'status' });
     User.belongsTo(models.itUserModel, { foreignKey: 'it_user_id', as: 'it_user' });
     User.belongsTo(models.CompanyModel, { foreignKey: 'company_id', as: 'company' });
     User.belongsTo(models.ManagerModel, { foreignKey: 'manager_id', as: 'manager' });
-    User.hasMany(models.CredentialModel, { foreignKey: 'user_id', as: 'credential' });
-  }; */
+    //User.hasMany(models.CredentialModel, { foreignKey: 'user_id', as: 'credential' });
+  };
 
   return User;
 };

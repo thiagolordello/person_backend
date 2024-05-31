@@ -22,9 +22,9 @@ const roleUserModel = (sequelize, DataTypes) => {
     },
   );
 
-  /* roleUser.associate = (models) => {
+  roleUser.associate = (models) => {
     roleUser.hasMany(models.User, { foreignKey: 'role_id', as: 'user' });
-  }; */
+  };
 
   return roleUser;
 };

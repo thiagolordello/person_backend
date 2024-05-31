@@ -23,9 +23,9 @@ const ManagerModel = (sequelize, DataTypes) => {
     },
   );
 
-  /* manager.associate = (models) => {
+  manager.associate = (models) => {
     manager.hasMany(models.User, { foreignKey: 'manager_id', as: 'user' });
-  }; */
+  };
 
   return manager;
 };

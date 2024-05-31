@@ -23,10 +23,10 @@ const StatusModel = (sequelize, DataTypes) => {
     },
   );
 
-  /* status.associate = (models) => {
-    status.hasMany(models.CredentialModel, { foreignKey: 'status_id', as: 'credential' });
+   status.associate = (models) => {
+    /*status.hasMany(models.CredentialModel, { foreignKey: 'status_id', as: 'credential' });*/
     status.hasMany(models.UserModel, { foreignKey: 'status_id', as: 'user' });
-  }; */
+  }; 
 
   return status;
 };
