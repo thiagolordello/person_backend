@@ -10,7 +10,7 @@ const CredentialModel = (sequelize, DataTypes) => {
         type: DataTypes.INTEGER,
       },
 
-      /*user_id: {
+      user_id: {
         type: DataTypes.INTEGER,
         references: {
           model: 'user',
@@ -19,7 +19,7 @@ const CredentialModel = (sequelize, DataTypes) => {
         allowNull: true,
         onUpdate: 'CASCADE',
         onDelete: 'SET NULL',
-      },*/
+      },
 
       category_id: {
         type: DataTypes.INTEGER,
@@ -78,7 +78,7 @@ const CredentialModel = (sequelize, DataTypes) => {
 
       updated_at: {
         type: sequelize.Date,
-        defaeultValue: sequelize.NOW,
+        defaultValue: sequelize.NOW,
       },
 
       updated_by: {
@@ -102,9 +102,9 @@ const CredentialModel = (sequelize, DataTypes) => {
     Credential.belongsTo(models.AppCategoryModel, { foreignKey: 'category_id', as: 'app_category' });
     Credential.belongsTo(models.ProfileUserModel, { foreignKey: 'profile_user_id', as: 'profile_user' });
     Credential.belongsTo(models.StatusModel, { foreignKey: 'status_id', as: 'status' });
-    //Credential.belongsTo(models.User, { foreignKey: 'id_user', as: 'user' });
-    Credential.belongsTo(models.itUserModel, { foreignKey: 'created_by' , as: 'id_it_user' });
-    Credential.belongsTo(models.itUserModel, { foreignKey: 'updated_by' , as: 'id_it_user' });
+    Credential.belongsTo(models.User, { foreignKey: 'user_id', as: 'user' });
+    Credential.belongsTo(models.itUserModel, { foreignKey: 'created_by' , as: 'created_by_user' });
+    Credential.belongsTo(models.itUserModel, { foreignKey: 'updated_by' , as: 'updated_by_user' });
 
   };
 

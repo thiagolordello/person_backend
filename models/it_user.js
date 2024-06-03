@@ -22,7 +22,7 @@ const itUserModel = (sequelize, DataTypes) => {
 
     },
     {
-      tablename: 'it_user',
+      tableName: 'it_user',
       underscored: true,
       timestamps: false,
     },
@@ -30,8 +30,8 @@ const itUserModel = (sequelize, DataTypes) => {
 
   itUser.associate = (models) => {
     itUser.hasMany(models.User, { foreignKey: 'it_user_id', as: 'user' });
-    itUser.hasMany(models.CredentialModel, { foreignKey: 'created_by', as: 'credential' });
-    itUser.hasMany(models.CredentialModel, { foreignKey: 'updated_by', as: 'credential' });
+    itUser.hasMany(models.CredentialModel, { foreignKey: 'created_by', as: 'created_credentials' });
+    itUser.hasMany(models.CredentialModel, { foreignKey: 'updated_by', as: 'updated_credentials' });
   };
 
   return itUser;
