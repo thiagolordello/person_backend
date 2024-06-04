@@ -11,7 +11,7 @@ module.exports = {
     },
 
     name_status: {
-      type: Sequelize.INTEGER,
+      type: Sequelize.STRING,
       allowNull: false,
     },
   }),

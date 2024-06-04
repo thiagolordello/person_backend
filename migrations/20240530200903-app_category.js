@@ -11,7 +11,7 @@ module.exports = {
     },
 
     name_category: {
-      type: Sequelize.INTEGER,
+      type: Sequelize.STRING,
       allowNull: false,
     },
   }),

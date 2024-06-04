@@ -1,0 +1,13 @@
+npx sequelize-cli db:migrate --name 20240530194452-status.js
+npx sequelize-cli db:migrate --name 20240530194510-role.js
+npx sequelize-cli db:migrate --name 20240530194526-company.js
+npx sequelize-cli db:migrate --name 20240530194535-manager.js
+npx sequelize-cli db:migrate --name 20240530194554-it_user.js
+npx sequelize-cli db:migrate --name 20240530194605-user.js
+npx sequelize-cli db:migrate --name 20240530200903-app_category.js
+npx sequelize-cli db:migrate --name 20240530200941-profile_user.js
+npx sequelize-cli db:migrate --name 20240530200957-credential.js
+npx sequelize-cli db:migrate --name 20240530212600-add-relacionamento-status-com-credential.js
+npx sequelize-cli db:migrate --name 20240531184555-add-relacionamento-user-com-credential.js
+
+npx sequelize-cli db:migrate --name 20240601160050-alter-it_user-name-column.js
