@@ -24,7 +24,7 @@ const CompanyModel = (sequelize, DataTypes) => {
   );
 
   company.associate = (models) => {
-    company.hasMany(models.User, { foreignKey: 'company_id', as: 'user' });
+    company.hasMany(models.user, { foreignKey: 'company_id', as: 'user' });
   };
 
   return company;

@@ -1,3 +1,4 @@
+
 const AppCategoryModel = (sequelize, DataTypes) => {
   const appcategory = sequelize.define(
     'app_category',
@@ -24,7 +25,7 @@ const AppCategoryModel = (sequelize, DataTypes) => {
   );
 
   appcategory.associate = (models) => {
-    appcategory.hasMany(models.CredentialModel, { foreignKey: 'category_id', as: 'credential' });
+    appcategory.hasMany(models.credential, { foreignKey: 'category_id', as: 'credential' });
   };
 
   return appcategory;

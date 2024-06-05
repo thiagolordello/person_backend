@@ -24,7 +24,7 @@ const ProfileUserModel = (sequelize, DataTypes) => {
   );
 
   profileuser.associate = (models) => {
-    profileuser.hasMany(models.CredentialModel, { foreignKey: 'profile_user_id', as: 'credential' });
+    profileuser.hasMany(models.credential, { foreignKey: 'profile_user_id', as: 'credential' });
   };
 
   return profileuser;

@@ -77,8 +77,8 @@ const CredentialModel = (sequelize, DataTypes) => {
       },
 
       updated_at: {
-        type: sequelize.Date,
-        defaultValue: sequelize.NOW,
+        type: DataTypes.DATE,
+        defaultValue: sequelize.NOW
       },
 
       updated_by: {
@@ -99,12 +99,12 @@ const CredentialModel = (sequelize, DataTypes) => {
   );
 
    Credential.associate = (models) => {
-    Credential.belongsTo(models.AppCategoryModel, { foreignKey: 'category_id', as: 'app_category' });
-    Credential.belongsTo(models.ProfileUserModel, { foreignKey: 'profile_user_id', as: 'profile_user' });
-    Credential.belongsTo(models.StatusModel, { foreignKey: 'status_id', as: 'status' });
-    Credential.belongsTo(models.User, { foreignKey: 'user_id', as: 'user' });
-    Credential.belongsTo(models.itUserModel, { foreignKey: 'created_by' , as: 'created_by_user' });
-    Credential.belongsTo(models.itUserModel, { foreignKey: 'updated_by' , as: 'updated_by_user' });
+    Credential.belongsTo(models.app_category, { foreignKey: 'category_id', as: 'app_category' });
+    Credential.belongsTo(models.profile_user, { foreignKey: 'profile_user_id', as: 'profile_user' });
+    Credential.belongsTo(models.status, { foreignKey: 'status_id', as: 'status' });
+    Credential.belongsTo(models.user, { foreignKey: 'user_id', as: 'user' });
+    Credential.belongsTo(models.it_user, { foreignKey: 'created_by' , as: 'created_by_user' });
+    Credential.belongsTo(models.it_user, { foreignKey: 'updated_by' , as: 'updated_by_user' });
 
   };
 

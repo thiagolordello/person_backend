@@ -24,8 +24,8 @@ const StatusModel = (sequelize, DataTypes) => {
   );
 
    status.associate = (models) => {
-    /*status.hasMany(models.CredentialModel, { foreignKey: 'status_id', as: 'credential' });*/
-    status.hasMany(models.UserModel, { foreignKey: 'status_id', as: 'user' });
+    status.hasMany(models.credential, { foreignKey: 'status_id', as: 'credential' });
+    status.hasMany(models.user, { foreignKey: 'status_id', as: 'user' });
   }; 
 
   return status;

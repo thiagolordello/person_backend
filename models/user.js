@@ -103,12 +103,12 @@ const UserModel = (sequelize, DataTypes) => {
   );
 
   User.associate = (models) => {
-    User.belongsTo(models.roleUser, { foreignKey: 'role_id', as: 'role' });
-    User.belongsTo(models.StatusModel,{ foreignKey: 'status_id',as: 'status' });
-    User.belongsTo(models.itUserModel, { foreignKey: 'it_user_id', as: 'it_user' });
-    User.belongsTo(models.CompanyModel, { foreignKey: 'company_id', as: 'company' });
-    User.belongsTo(models.ManagerModel, { foreignKey: 'manager_id', as: 'manager' });
-    User.hasMany(models.CredentialModel, { foreignKey: 'user_id', as: 'credential' });
+    User.belongsTo(models.role, { foreignKey: 'role_id', as: 'role' });
+    User.belongsTo(models.status,{ foreignKey: 'status_id',as: 'status' });
+    User.belongsTo(models.it_user, { foreignKey: 'it_user_id', as: 'it_user' });
+    User.belongsTo(models.company, { foreignKey: 'company_id', as: 'company' });
+    User.belongsTo(models.manager, { foreignKey: 'manager_id', as: 'manager' });
+    User.hasMany(models.credential, { foreignKey: 'user_id', as: 'credential' });
   };
 
   return User;

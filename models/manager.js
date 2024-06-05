@@ -24,7 +24,7 @@ const ManagerModel = (sequelize, DataTypes) => {
   );
 
   manager.associate = (models) => {
-    manager.hasMany(models.User, { foreignKey: 'manager_id', as: 'user' });
+    manager.hasMany(models.user, { foreignKey: 'manager_id', as: 'user' });
   };
 
   return manager;

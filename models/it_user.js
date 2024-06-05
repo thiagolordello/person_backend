@@ -29,9 +29,9 @@ const itUserModel = (sequelize, DataTypes) => {
   );
 
   itUser.associate = (models) => {
-    itUser.hasMany(models.User, { foreignKey: 'it_user_id', as: 'user' });
-    itUser.hasMany(models.CredentialModel, { foreignKey: 'created_by', as: 'created_credentials' });
-    itUser.hasMany(models.CredentialModel, { foreignKey: 'updated_by', as: 'updated_credentials' });
+    itUser.hasMany(models.user, { foreignKey: 'it_user_id', as: 'user' });
+    itUser.hasMany(models.credential, { foreignKey: 'created_by', as: 'created_credentials' });
+    itUser.hasMany(models.credential, { foreignKey: 'updated_by', as: 'updated_credentials' });
   };
 
   return itUser;
