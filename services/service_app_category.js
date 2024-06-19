@@ -1,37 +1,37 @@
 // const moment = require('moment');
-const { TasksUser } = require('../models');
+const { app_category } = require('../models');
 
 const getAllappCategories = async () => {
-  const result = await TasksUser.findAll({
+  const result = await app_category.findAll({
     where: { id_user: id },
   });
   return result;
 };
 
-const createAppCategory = async (idUser, description, status) => {
+const createAppCategoryService = async (name_category) => {
   // const newTask = {
   //   idUser,
   //   description,
   //   status,
   //   createdAt: moment().format(),
   // };
-  const result = await TasksUser.create(idUser, description, status);
+  const result = await app_category.create(name_category);
   return result;
 };
 
-const getOneAppCategory = async (id) => {
-  const result = await TasksUser.findByPk(id);
+const getOneAppCategoryService = async (id) => {
+  const result = await app_category.findByPk(id);
   if (!result) return null;
   return result;
 };
 
-const updateAppCategory = async (id, description, status) => {
-  const updatedNow = await TasksUser.findByPk(id, {
+const updateAppCategoryService = async (id, description, status) => {
+  const updatedNow = await app_category.findByPk(id, {
     attributes: { exclude: ['id', 'idUser', 'createdAt'] },
   });
   if (!updatedNow) return null;
   // const  { description, status } = req.body;
-  const result = await TasksUser.update(
+  const result = await app_category.update(
     { description, status },
     {
       where: { id },
@@ -42,16 +42,16 @@ const updateAppCategory = async (id, description, status) => {
   return result;
 };
 
-const removeAppCategory = async (id) => {
-  const task = await TasksUser.destroy({ where: { id } });
+const removeAppCategoryService = async (id) => {
+  const task = await app_category.destroy({ where: { id } });
   if (!task) return null;
   return task;
 };
 
 module.exports = {
   getAllappCategories,
-  getOneAppCategory,
-  createAppCategory,
-  updateAppCategory,
-  removeAppCategory,
+  getOneAppCategoryService,
+  createAppCategoryService,
+  updateAppCategoryService,
+  removeAppCategoryService,
 };

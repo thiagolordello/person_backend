@@ -1,5 +1,5 @@
 const {
-    getAllappCategories,getOneAppCategory,createAppCategory,updateAppCategory,removeAppCategory,
+    getAllappCategories,getOneAppCategoryService,createAppCategoryService,updateAppCategory,removeAppCategory,
   } = require('../services');
   
   const appCategoryContrl = async (req, res) => {
@@ -14,17 +14,17 @@ const {
   
   const createAppCategoryController = async (req, res) => {
     try {
-      const {
-        idUser, description, status,
-      } = req.body;
-      await createAppCategoryController({ name_category });
+      const { name_category } = req.body;
+      
+      const result = await createAppCategoryService({ name_category });
+      const { id_category } = result; 
       return res.status(201).json({ id_category,name_category });
     } catch (error) {
       return res.status(500).json({ message: error.message });
     }
   };
   
-  const editAppCategory = async (req, res) => {
+  const editAppCategoryContoller = async (req, res) => {
     const { id } = req.params;
     const { name_category } = req.body;
     try {
@@ -38,7 +38,7 @@ const {
   
  
   
-  const deleteAppCategory = async (req, res) => {
+  const deleteAppCategoryContoller = async (req, res) => {
     const { id } = req.params;
     try {
       const taskForRemove = await removeAppCategory(id);
@@ -51,10 +51,10 @@ const {
     }
   };
   
-  const oneAppById = async (req, res) => {
+  const oneAppByIdContoller = async (req, res) => {
     const { id } = req.params;
     try {
-      const task = await getOneAppCategory(id);
+      const task = await getOneAppCategoryService(id);
       if (task == null) return res.status(404).json({ message: 'Categoria de app não existente ou não encontrada' });
       return res.status(201).json(task);
     } catch (error) {
@@ -65,8 +65,8 @@ const {
   module.exports = {
     appCategoryContrl,
     createAppCategoryController,
-    editAppCategory,
-    deleteAppCategory,
-    oneAppById,
+    editAppCategoryContoller,
+    deleteAppCategoryContoller,
+    oneAppByIdContoller,
   };
   
